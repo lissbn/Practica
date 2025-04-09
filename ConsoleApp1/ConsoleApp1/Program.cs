@@ -131,7 +131,7 @@ List<int> listaNumeros = new List<int> { }; // Se ha creado una nueva lista de n
 for (int contador2 = 100; contador2 >= 1; contador2--)
 {
     listaNumeros.Add(contador2); // añade el valor en cntador2 como elemento a la lista
-//    Console.WriteLine(contador2);//Muestra en la pantalla el valor del numero
+//    Console.WriteLine(contador2);// Muestra en la pantalla el valor del numero
 }
 
 
@@ -170,7 +170,7 @@ int Sumatoria(int numerosASumar) // funcion que suma los valores hasta llegar al
 
 
 // funcion calculadora , usar switch case
-//Calculadora(10, 2, "+");
+// Calculadora(10, 2, "+");
 
 int Calculadora(int primerNum, int segNum, string operacion)
 {
