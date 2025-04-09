@@ -30,161 +30,174 @@ book8.title = "test";
         //informacion dentro de la variable
 
         Console.WriteLine(book8.title); // Muestra en pantalla el titulo del libro 1
-*/
-/*
+
+
  // Recibir una entrada tecleada por el usuario y mostrarla en pantalla
         string entrada = Console.ReadLine();
         string entradaNumerica = Console.ReadLine();
         Console.WriteLine(entradaNumerica);
-*/    
-
+    
+*/
 //crear clase estudiante y agregar una lista de varios estudiantes (max 5).
 //imprimir el nombre de cada uno desde la lista
+/*
+       Estudiante estudiante1 = new Estudiante("001", "Lissa", "Bueno", "8098098009", "Ingenieria Telematica");
+       Estudiante estudiante2 = new Estudiante("002", "Pedro", "Perez", "8098098009", "Ingenieria Electronica");
+       Estudiante estudiante3 = new Estudiante("003", "Marta", "Balbuena", "8098098009", "Ingenieria Civil");
+       Estudiante estudiante4 = new Estudiante("004", "Jose", "Sanchez", "8098098009", "Ingenieria Electronica");
+       Estudiante estudianteNuevo = new Estudiante();
 
-        Estudiante estudiante1 = new Estudiante("001", "Lissa", "Bueno", "8098098009", "Ingenieria Telematica");
-        Estudiante estudiante2 = new Estudiante("002", "Pedro", "Perez", "8098098009", "Ingenieria Electronica");
-        Estudiante estudiante3 = new Estudiante("003", "Marta", "Balbuena", "8098098009", "Ingenieria Civil");
-        Estudiante estudiante4 = new Estudiante("004", "Jose", "Sanchez", "8098098009", "Ingenieria Electronica");
-        Estudiante estudianteNuevo = new Estudiante();
-        
-        List<Estudiante> listaEstudiante = new List<Estudiante> { };
-        
-        listaEstudiante.Add(estudiante1);
-        listaEstudiante.Add(estudiante2);
-        listaEstudiante.Add(estudiante3);
-        listaEstudiante.Add(estudiante4);
+       List<Estudiante> listaEstudiante = new List<Estudiante> { };
+
+       listaEstudiante.Add(estudiante1);
+       listaEstudiante.Add(estudiante2);
+       listaEstudiante.Add(estudiante3);
+       listaEstudiante.Add(estudiante4);
+
 
        // Console.WriteLine(estudiante1.nombre);
- 
-        
-        foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
-        {
-          //li      Console.WriteLine(estudiante.nombre);
-                // Console.WriteLine(estudiante);
-        }
-/*
-        for (int contador = 0; contador < listaEstudiante.Count; contador++) // el contador cuenta numeros
-        {
-                Console.WriteLine(listaEstudiante[contador].nombre);
-                // Console.WriteLine(contador);
-        }
-   
-        Console.WriteLine("Escriba su nombre: ");
-        string nombre = Console.ReadLine();
-        Console.WriteLine("Nombre ingresado: " + nombre);
-        */
-
-/*
-        foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
-        {
-                if (estudiante.nombre == nombre)
-                {
-                        Console.WriteLine(estudiante.id);
-                        Console.WriteLine(estudiante.nombre);
-                        Console.WriteLine(estudiante.apellido);
-                        Console.WriteLine(estudiante.telefono);
-                        Console.WriteLine(estudiante.carrera);
-                }
-                
-        }
-*/
 
 
-/*
+       foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
+       {
+         //li      Console.WriteLine(estudiante.nombre);
+               // Console.WriteLine(estudiante);
+       }
+
+       for (int contador = 0; contador < listaEstudiante.Count; contador++) // el contador cuenta numeros
+       {
+               Console.WriteLine(listaEstudiante[contador].nombre);
+               // Console.WriteLine(contador);
+       }
+
+       Console.WriteLine("Escriba su nombre: ");
+       string nombre = Console.ReadLine();
+       Console.WriteLine("Nombre ingresado: " + nombre);
+
+
+
+       foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
+       {
+               if (estudiante.nombre == nombre)
+               {
+                       Console.WriteLine(estudiante.id);
+                       Console.WriteLine(estudiante.nombre);
+                       Console.WriteLine(estudiante.apellido);
+                       Console.WriteLine(estudiante.telefono);
+                       Console.WriteLine(estudiante.carrera);
+               }
+
+       }
+
+
+
+
+
 // En base al nombre, elimine el estudiante, e imprimir la nueva lista
 
 
-        Console.WriteLine("Escriba el nombre: ");
-        string nombreTest = Console.ReadLine();
- 
-        for (int contador = 0; contador < listaEstudiante.Count; contador++)    
-        {
-            
-                if (listaEstudiante[contador].nombre == nombreTest)
-                {
-                        
-                        listaEstudiante.Remove(listaEstudiante[contador]); // no se puede eliminar elementos de una lista en un foreach
-                                                                           //  en la que accedes a foreach, porque esa lista se esta usando para iterar
-                        //     Console.WriteLine(estudiante.nombre);
-                }
-        }
+       Console.WriteLine("Escriba el nombre: ");
+       string nombreTest = Console.ReadLine();
 
-        Console.WriteLine("Estudiantes de la lista");
-        foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
-        {
-                
-                Console.WriteLine(estudiante.nombre);
-                // Console.WriteLine(estudiante);
-        }
-   */
+       for (int contador = 0; contador < listaEstudiante.Count; contador++)
+       {
+
+               if (listaEstudiante[contador].nombre == nombreTest)
+               {
+
+                       listaEstudiante.Remove(listaEstudiante[contador]); // no se puede eliminar elementos de una lista en un foreach
+                                                                          //  en la que accedes a foreach, porque esa lista se esta usando para iterar
+                       //     Console.WriteLine(estudiante.nombre);
+               }
+       }
+
+       Console.WriteLine("Estudiantes de la lista");
+       foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
+       {
+
+               Console.WriteLine(estudiante.nombre);
+               // Console.WriteLine(estudiante);
+       }
+
 
 // Cambiar el nombre al estudiante
-/*
-        Console.WriteLine("Estudiantes de la lista:");
-        foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
-        {
-                
-                Console.WriteLine(estudiante.nombre);
-        }
 
-        Console.WriteLine("Escriba el nombre que desea cambiar: ");
-        string nombreRecibido = Console.ReadLine();
- 
-        for (int contador2 = 0; contador2 < listaEstudiante.Count; contador2++)    
-        {
-            
-                if (listaEstudiante[contador2].nombre == nombreRecibido)
-                {
-                        Console.WriteLine("Escriba el nuevo nombre: ");
-                        string nombreNuevo= Console.ReadLine();
-                      //  list[someIndex].SomeProperty = someValue;
-                        listaEstudiante[contador2].nombre = nombreNuevo; 
-                }
-        }
+       Console.WriteLine("Estudiantes de la lista:");
+       foreach (Estudiante estudiante in listaEstudiante) //no cuenta, usa el tipo de datos
+       {
 
-        Console.WriteLine("Estudiantes de la lista");
-        foreach (Estudiante estudiante in listaEstudiante) 
-        {
-                
-                Console.WriteLine(estudiante.nombre);
-        }
-*/
+               Console.WriteLine(estudiante.nombre);
+       }
+
+       Console.WriteLine("Escriba el nombre que desea cambiar: ");
+       string nombreRecibido1 = Console.ReadLine();
+
+       for (int contador2 = 0; contador2 < listaEstudiante.Count; contador2++)
+       {
+
+               if (listaEstudiante[contador2].nombre == nombreRecibido1)
+               {
+                       Console.WriteLine("Escriba el nuevo nombre: ");
+                       string nombreNuevo= Console.ReadLine();
+                     //  list[someIndex].SomeProperty = someValue;
+                       listaEstudiante[contador2].nombre = nombreNuevo;
+               }
+       }
+
+       Console.WriteLine("Estudiantes de la lista");
+       foreach (Estudiante estudiante in listaEstudiante)
+       {
+
+               Console.WriteLine(estudiante.nombre);
+       }
+
 
 //Crear nuevo estudiante con todos los parametros
 
-        Console.WriteLine("Escriba el nombre que desea agregar: ");
-        string nombreRecibido = Console.ReadLine();
-        estudianteNuevo.nombre = nombreRecibido;
+       Console.WriteLine("Escriba el nombre que desea agregar: ");
+       string nombreRecibido2 = Console.ReadLine();
+       estudianteNuevo.nombre = nombreRecibido2;
 
-        Console.WriteLine("Escriba el apellido que desea agregar: ");
-        string apellidoRecibido = Console.ReadLine();
-        estudianteNuevo.apellido = apellidoRecibido;
+       Console.WriteLine("Escriba el apellido que desea agregar: ");
+       string apellidoRecibido = Console.ReadLine();
+       estudianteNuevo.apellido = apellidoRecibido;
 
-        Console.WriteLine("Escriba el telefono que desea agregar: ");
-        string telefonoRecibido = Console.ReadLine();
-        estudianteNuevo.telefono = telefonoRecibido;
+       Console.WriteLine("Escriba el telefono que desea agregar: ");
+       string telefonoRecibido = Console.ReadLine();
+       estudianteNuevo.telefono = telefonoRecibido;
 
-        Console.WriteLine("Escriba la carrera del estudiante que desea agregar: ");
-        string carreraRecbida = Console.ReadLine();
-        estudianteNuevo.carrera = carreraRecbida;
+       Console.WriteLine("Escriba la carrera del estudiante que desea agregar: ");
+       string carreraRecbida = Console.ReadLine();
+       estudianteNuevo.carrera = carreraRecbida;
 
-        Console.WriteLine("Escriba el id que desea agregar: ");
-        string idRecibido = Console.ReadLine();
-        estudianteNuevo.id = idRecibido;
+       Console.WriteLine("Escriba el id que desea agregar: ");
+       string idRecibido = Console.ReadLine();
+       estudianteNuevo.id = idRecibido;
 
-        listaEstudiante.Add(estudianteNuevo);
+       listaEstudiante.Add(estudianteNuevo);
 
-        Console.WriteLine("Estudiantes de la lista");
-        foreach (Estudiante estudiante in listaEstudiante) 
-        {
-                Console.WriteLine(estudiante.id);
-                Console.WriteLine(estudiante.nombre);
-                Console.WriteLine(estudiante.apellido);
-                Console.WriteLine(estudiante.telefono);
-                Console.WriteLine(estudiante.carrera);
-                Console.WriteLine("........................................");
-                
-        }
+       Console.WriteLine("Estudiantes de la lista");
+       foreach (Estudiante estudiante in listaEstudiante)
+       {
+               Console.WriteLine(estudiante.id);
+               Console.WriteLine(estudiante.nombre);
+               Console.WriteLine(estudiante.apellido);
+               Console.WriteLine(estudiante.telefono);
+               Console.WriteLine(estudiante.carrera);
+               Console.WriteLine("........................................");
 
+       }
+*/
 // crud create, read, update, delete
-     
+
+        Database database = new Database();
+        
+        database.ReadStudent();  
+        database.AddStudent();
+        database.ReadStudent();  
+        database.DeleteStudent();
+        database.ReadStudent();  
+        database.ChangeNameofStudent();
+        database.ReadStudent();        
+
+        
