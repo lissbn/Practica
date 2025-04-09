@@ -9,9 +9,14 @@ string text = "hola"; //para texto o cadena de caracteres.
 char character = 'a'; //para caracteres.
 bool boolean = false; // para operaciones de verdadero y falso
 
+string nombre = Console.ReadLine();
+Console.WriteLine(nombre);
+
+
 
 //condicionales
 
+/*
 if (boolean) // esta condicional tomará como verdadero cuando la variable boolean sea verdadera
 {
     Console.WriteLine("true!"); // si se cumple la condición se muestra "true" en consola
@@ -57,7 +62,8 @@ switch (number) // se toma el contenido de la variable i para saber qué caso es
         Console.WriteLine("no se cumplió ningún caso mencionado"); //muestra en la pantalla este resultado si no se cumplio ninguna condicion anterior
         break;
 }
-
+*/
+/*
 
 TestFunction(); // llamar la primera función
 //bool b = SecondTestFunction(50); // llamar a la funcion y que su resultado se guarde en la variable
@@ -74,7 +80,7 @@ bool SecondTestFunction(int i)
     return i < 100;               // retornará como valor si i es menor que 100 True
    
 }
-
+*/
 
 int[] intArray = new int[5] {1, 2, 3, 4, 5}; // arreglo de numeros
 
@@ -87,10 +93,10 @@ List<int> intlist = new List<int> {1, 2, 3, 6, 7}; // Lista es una coleccion que
  * 'Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')'
 
  * 
- */
+ 
 
-Console.WriteLine("Primer elemento de la lista " + intlist[0]);
-Console.WriteLine("ultimo elemento de la lista " + intlist[intlist.Count-1]);
+//Console.WriteLine("Primer elemento de la lista " + intlist[0]);
+//Console.WriteLine("ultimo elemento de la lista " + intlist[intlist.Count-1]);
 
 
 foreach ( int elemento in intlist) // bucle que toma en cuenta cada elemento de la lista
@@ -140,13 +146,13 @@ foreach (int contador3 in listaNumeros)
 {
     Console.WriteLine(contador3); //inicia un contador3 y por cada uno que haya en intlist este se imprime
 }
-
+*/
 
 // hacer funcion que tenga parametro int cantidad, y tener la sumatoria de los numeros del 1 al n
 
 
 //Sumatoria(5);
-
+/*
 // lo siguiente es el intento de crear un codigo que reciba un numero por consola
 string numeroRecibido = Console.ReadLine();
 Console.WriteLine("se digito: " + numeroRecibido); // muestra en pantalla el numero digitado por el usuario
@@ -154,7 +160,7 @@ int convertidoaInt; // se parsea el string de numero recibido a int
 //= int.Parse(numeroRecibido); 
 int.TryParse(numeroRecibido, out convertidoaInt); // se parsea el string de numero recibido a int
 Console.WriteLine(Sumatoria(convertidoaInt)); // se muestra en consola el resultado de la funcion "Sumatoria" junto al resultado
-
+*/
 int Sumatoria(int numerosASumar) // funcion que suma los valores hasta llegar al numero elegido 
 {
     int suma = 0; // variable suma inicializada en 0
@@ -174,7 +180,6 @@ int Sumatoria(int numerosASumar) // funcion que suma los valores hasta llegar al
 
 int Calculadora(int primerNum, int segNum, string operacion)
 {
-
     switch (operacion)
     {
         case "+":
