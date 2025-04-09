@@ -136,7 +136,7 @@ for (int contador2 = 100; contador2 >= 1; contador2--)
 
 
 
-foreach (int contador3 in numeros)
+foreach (int contador3 in listaNumeros)
 {
     Console.WriteLine(contador3); //inicia un contador3 y por cada uno que haya en intlist este se imprime
 }
