@@ -5,33 +5,31 @@ public class Database
 // CRUD Create, Read, Update, Delete
 // hacer una clase llamada Database, campo lista de estudiantes con 2 estudiantes
 // en la lista, 
-// una funcion para crear estudiantes
+// funcion para crear estudiantes
 // funcion para listar estudiantes
 // funcion para cambiar nombre al estudiante por uno diferente
 // borrar un estudiante dado un ID
 // las funciones son clases. Cuando una funcion esta dentro de una clase se llama
-// metodo
+// método
 // Inicializar listas en el constructor
 
-
-
     List<Estudiante> listaEstudiantes = new List<Estudiante>(); // se inicializa una lista de Estudiantes
-                                                                // para poder manejarla desde Database
+    // para poder manejarla desde Database
 
-    
+
 
     public Database()
     {
-        Estudiante student1 = new Estudiante("40", "Juan", "Perez", "5559512368","Medicina");
-        Estudiante student2 = new Estudiante("50", "Maria", "Rosa", "9998887777","Estomatologia");
+        Estudiante student1 = new Estudiante("40", "Juan", "Perez", "5559512368", "Medicina");
+        Estudiante student2 = new Estudiante("50", "Maria", "Rosa", "9998887777", "Estomatologia");
         listaEstudiantes.Add(student1);
         listaEstudiantes.Add(student2);
     } // Aqui se agregan 2 estudiantes por parametros a la lista de estudiantes
-    
+
 
     public void AddStudent() // funcion para añadir un nuevo estudiante
     {
-        Estudiante element = new Estudiante(); // Se crea una variable de tipo Estudiante llamada elemet
+        Estudiante element = new Estudiante(); // Se crea una variable de tipo Estudiante llamada element
         Console.WriteLine("Crear estudiante:"); // Le indica al usuario la funcion a realizar
         Console.WriteLine("Escriba el nombre que desea agregar: ");
         string newName = Console.ReadLine(); // Toma la entrada del usuario
@@ -57,65 +55,89 @@ public class Database
 
     public void DeleteStudent() // funcion para borrar un estudiante
     {
+        bool logrado = false;
         Console.WriteLine("Ingrese el Id del estudiante que desea eliminar: ");
         string idRecibido = Console.ReadLine(); // aqui se guarda el Id escrito por el usuario
 
-        for(int contador = 0; contador < listaEstudiantes.Count; contador++) // bucle for y .Count para
-                                                                             // contar la cantidad de elementos en la lista
+        for (int contador = 0; contador < listaEstudiantes.Count; contador++) // bucle for y .Count para
+                                                                              // contar la cantidad de elementos en la lista
         {
             if (listaEstudiantes[contador].id == idRecibido) // cuando se encuentre  un id igual al dado por el usuario se
-                                                             // se cumplira esta condicion y se realizara la funcion de este
-            
+                                                                // se cumplira esta condicion y se realizara la funcion de este
             {
-                listaEstudiantes.Remove(listaEstudiantes[contador]);  // se usa .Remove para eliminar el estudiante en el indice encontrado
+                listaEstudiantes.Remove(listaEstudiantes[contador]); // se usa .Remove para eliminar el estudiante en el indice encontrado
+                Console.WriteLine("Estudiante eliminado correctamente");
+                logrado = true;
+            }
+        }
+        if (logrado == false)
+        {
+            {
+                Console.WriteLine("Estudiante no encontrado");
             }
         }
     }
 
-    public void ReadStudent() // Funcion para leer todos los estudiantes
+    public void ReadStudent(bool showFullData) // Funcion para leer todos los estudiantes
     {
-        foreach (Estudiante student in listaEstudiantes)  // bucle para contar dentro de la lista
+        if (!showFullData)
         {
-            
-            Console.WriteLine( "id: "+ student.id); // muestra la informacion del estudiante en que se encuentra el indice contador
-            Console.WriteLine("Nombre: " + student.nombre);
-            Console.WriteLine("Apellido:" + student.apellido);
-            Console.WriteLine("Telefono:" + student.telefono);
-            Console.WriteLine("Carrera:" + student.carrera);
-            Console.WriteLine(".......................................................................");
+            Console.WriteLine("Estudiantes de la lista:");
+            foreach (Estudiante estudiante in listaEstudiantes)
+            {
+
+                Console.WriteLine(estudiante.nombre);
+            }
+        }
+        else
+        {
+            foreach (Estudiante student in listaEstudiantes) // bucle para contar dentro de la lista
+            {
+
+                Console.WriteLine("id: " + student.id); // muestra la informacion del estudiante en que se encuentra el indice contador
+                Console.WriteLine("Nombre: " + student.nombre);
+                Console.WriteLine("Apellido: " + student.apellido);
+                Console.WriteLine("Telefono: " + student.telefono);
+                Console.WriteLine("Carrera: " + student.carrera);
+                Console.WriteLine(".......................................................................");
+            }
         }
     }
+// al borrar algo correctamente mande un mensaje diciendo que se borro o no se encontro el id
+// mostrar mensaje si se encontro el estudiante
 
     public void ChangeNameofStudent() // funcion para cambiar el nombre de un estudiante
     {
-        Console.WriteLine("Estudiantes de la lista:");
-        foreach (Estudiante estudiante in listaEstudiantes)  // primero muestra los nombres de los estudiantes actualmente
-        {
-                
-            Console.WriteLine(estudiante.nombre);
-        }
-
+        bool logrado = false;
         Console.WriteLine("Escriba el nombre que desea cambiar: ");
         string nombreRecibido1 = Console.ReadLine();
- 
-        for (int contador = 0; contador < listaEstudiantes.Count; contador++)    //busca un estudiante con el mismo nombre en la lista
+
+        for (int contador = 0;
+             contador < listaEstudiantes.Count; contador++) //busca un estudiante con el mismo nombre en la lista
         {
-           
-            if (listaEstudiantes[contador].nombre == nombreRecibido1) 
+
+            if (listaEstudiantes[contador].nombre == nombreRecibido1)
             {
-               
-                Console.WriteLine("Escriba el nuevo nombre: "); 
-                string nombreNuevo= Console.ReadLine(); // recibe el nuevo nombre que tendra el estudiante
-                listaEstudiantes[contador].nombre = nombreNuevo; // ingresa el nuevo nombre en donde se encontraba el anterior
+
+                Console.WriteLine("Escriba el nuevo nombre: ");
+                string nombreNuevo = Console.ReadLine(); // recibe el nuevo nombre que tendra el estudiante
+                listaEstudiantes[contador].nombre =
+                    nombreNuevo; // ingresa el nuevo nombre en donde se encontraba el anterior
+                Console.WriteLine("Nombre de estudiante cambiado correctamente");
+                logrado = true;
+            }
+            else
+            {
+                logrado = false;
             }
         }
 
-        Console.WriteLine("Estudiantes de la lista");
-        foreach (Estudiante estudiante in listaEstudiantes) 
+        if (logrado == false)
         {
-                
-            Console.WriteLine(estudiante.nombre);
+            Console.WriteLine("Estudiante no encontrado");
         }
     }
+    
 }
+
 //

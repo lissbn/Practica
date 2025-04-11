@@ -192,12 +192,46 @@ book8.title = "test";
 
         Database database = new Database();
         
-        database.ReadStudent();  
-        database.AddStudent();
-        database.ReadStudent();  
-        database.DeleteStudent();
-        database.ReadStudent();  
-        database.ChangeNameofStudent();
-        database.ReadStudent();        
+        bool showFullData = false;
 
+        database.ReadStudent(true);  
+        database.AddStudent();
+        Console.WriteLine("Desea mostrar solo los nombres de los estudiante? (n) Desea mostrar todos los datos de los estudiantes? (s): ");
+        string respuesta1 = Console.ReadLine();
+        if (respuesta1 == "s")
+        {
+          //      showFullData = true;
+                database.ReadStudent(true);  
+        }
+        else
+        {
+            //    showFullData = false;
+                database.ReadStudent(false);  
+        }
         
+        database.DeleteStudent();
+        Console.WriteLine(
+                "Desea mostrar solo los nombres de los estudiante? (n) Desea mostrar todos los datos de los estudiantes? (s): ");
+        string respuesta2 = Console.ReadLine();
+        if (respuesta2 == "s")
+        {
+                showFullData = true;
+        }
+        else
+        {
+                showFullData = false;
+        }
+        database.ReadStudent(showFullData);  
+        database.ChangeNameofStudent();
+        Console.WriteLine(
+                "Desea mostrar solo los nombres de los estudiante? (n) Desea mostrar todos los datos de los estudiantes? (s): ");
+        string respuesta3 = Console.ReadLine();
+        if (respuesta3 == "s")
+        {
+                showFullData = true;
+        }
+        else
+        {
+                showFullData = false;
+        }
+        database.ReadStudent(showFullData);     
