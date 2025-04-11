@@ -194,19 +194,19 @@ book8.title = "test";
         
         bool showFullData = false;
 
-        database.ReadStudent(true);  
+        database.ReadStudentalt(true);  
         database.AddStudent();
         Console.WriteLine("Desea mostrar solo los nombres de los estudiante? (n) Desea mostrar todos los datos de los estudiantes? (s): ");
         string respuesta1 = Console.ReadLine();
         if (respuesta1 == "s")
         {
           //      showFullData = true;
-                database.ReadStudent(true);  
+                database.ReadStudentalt(true);  
         }
         else
         {
             //    showFullData = false;
-                database.ReadStudent(false);  
+                database.ReadStudentalt(false);  
         }
         
         database.DeleteStudent();
@@ -221,7 +221,7 @@ book8.title = "test";
         {
                 showFullData = false;
         }
-        database.ReadStudent(showFullData);  
+        database.ReadStudentalt(showFullData);  
         database.ChangeNameofStudent();
         Console.WriteLine(
                 "Desea mostrar solo los nombres de los estudiante? (n) Desea mostrar todos los datos de los estudiantes? (s): ");
@@ -234,4 +234,4 @@ book8.title = "test";
         {
                 showFullData = false;
         }
-        database.ReadStudent(showFullData);     
+        database.ReadStudentalt(showFullData);     
